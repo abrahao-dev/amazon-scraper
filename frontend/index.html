@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Product Scraper</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">
+          <i class="fas fa-search"></i>
+          Amazon Product Scraper
+        </h1>
+        <p class="subtitle">Search and scrape Amazon product listings with ease</p>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <main class="main-content">
+      <div class="search-section">
+        <div class="search-container">
+          <div class="input-group">
+            <input type="text" id="keywordInput" placeholder="Enter product keyword (e.g., 'laptop', 'headphones')"
+              class="search-input">
+            <button id="searchBtn" class="search-btn">
+              <i class="fas fa-search"></i>
+              Search Products
+            </button>
+          </div>
+          <div class="search-tips">
+            <p><i class="fas fa-lightbulb"></i> Try searching for specific products like "wireless headphones" or
+              "gaming laptop"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="spinner"></div>
+        <p>Scraping Amazon for products...</p>
+        <small>This may take a few seconds</small>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-content">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h3>Oops! Something went wrong</h3>
+          <p id="errorMessage">An error occurred while scraping Amazon</p>
+          <button id="retryBtn" class="retry-btn">
+            <i class="fas fa-redo"></i>
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="resultsSection" class="results-section hidden">
+        <div class="results-header">
+          <h2 id="resultsTitle">Search Results</h2>
+          <div class="results-meta">
+            <span id="resultsCount" class="results-count">0 products found</span>
+            <span id="searchKeyword" class="search-keyword"></span>
+          </div>
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+
+        <div id="noResults" class="no-results hidden">
+          <i class="fas fa-search"></i>
+          <h3>No products found</h3>
+          <p>Try a different keyword or check your internet connection</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Amazon Product Scraper. Built with ❤️ using Bun, Express, and Vite.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
